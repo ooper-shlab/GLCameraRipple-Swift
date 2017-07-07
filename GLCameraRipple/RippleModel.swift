@@ -108,7 +108,7 @@ class RippleModel: NSObject {
                     let factor = (distance/Float(touchRadius))
                     
                     // goes from -512 -> 0
-                    rippleCoeff[y*(touchRadius*2+1)+x] = -(cos(factor*Float(M_PI))+1.0) * 256.0
+                    rippleCoeff[y*(touchRadius*2+1)+x] = -(cos(factor * .pi)+1.0) * 256.0
                 } else {
                     rippleCoeff[y*(touchRadius*2+1)+x] = 0.0
                 }
