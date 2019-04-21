@@ -464,10 +464,10 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         source.withUnsafeBytes{(bytes: UnsafePointer<GLchar>?) in
             var bytePtr = bytes
             glShaderSource(shader.pointee, 1, &bytePtr, nil)
+            glCompileShader(shader.pointee)
         }
-        glCompileShader(shader.pointee)
         
-        #if DEBUG
+        //#if DEBUG
             var logLength: GLint = 0
             glGetShaderiv(shader.pointee, GLenum(GL_INFO_LOG_LENGTH), &logLength)
             if logLength > 0 {
@@ -475,7 +475,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
                 glGetShaderInfoLog(shader.pointee, logLength, &logLength, &log)
                 NSLog("Shader compile log:\n\(String(cString: log))")
             }
-        #endif
+        //#endif
         
         glGetShaderiv(shader.pointee, GLenum(GL_COMPILE_STATUS), &status)
         guard status != 0 else {
