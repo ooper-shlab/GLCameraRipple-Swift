@@ -92,8 +92,8 @@ class RippleModel: NSObject {
     
     private func initRippleMap() {
         // +2 for padding the border
-        rippleSource.initialize(to: 0, count: rippleSourceCount)
-        rippleDest.initialize(to: 0, count: rippleDestCount)
+        rippleSource.initialize(repeating: 0, count: rippleSourceCount)
+        rippleDest.initialize(repeating: 0, count: rippleDestCount)
     }
     
     private func initRippleCoeff() {
@@ -194,14 +194,14 @@ class RippleModel: NSObject {
     }
     
     private func freeBuffers() {
-        rippleCoeff.deallocate(capacity: rippleCoeffCount)
+        rippleCoeff.deallocate()
         
-        rippleSource.deallocate(capacity: rippleSourceCount)
-        rippleDest.deallocate(capacity: rippleDestCount)
+        rippleSource.deallocate()
+        rippleDest.deallocate()
         
-        rippleVertices.deallocate(capacity: rippleVerticesCount)
-        rippleTexCoords.deallocate(capacity: rippleTexCoordsCount)
-        rippleIndicies.deallocate(capacity: rippleIndiciesCount)
+        rippleVertices.deallocate()
+        rippleTexCoords.deallocate()
+        rippleIndicies.deallocate()
     }
     
     init(screenWidth width: Int, screenHeight height: Int,

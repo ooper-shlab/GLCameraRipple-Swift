@@ -46,11 +46,11 @@
 		B66E3E3C13E9E79C00D2ACF0 /* GLCameraRipple-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GLCameraRipple-Info.plist"; sourceTree = "<group>"; };
 		B66E3E4613E9E79C00D2ACF0 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		B66E3E4813E9E79C00D2ACF0 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
-		B66E3E4E13E9E79C00D2ACF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RippleViewController_iPhone.xib; sourceTree = "<group>"; };
-		B66E3E5113E9E79C00D2ACF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RippleViewController_iPad.xib; sourceTree = "<group>"; };
 		B69AAFDF13FC961F00B7125C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B69AAFE213FC965400B7125C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B69AAFE413FC972A00B7125C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D76C0863226C170400B04327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RippleViewController_iPhone.xib; sourceTree = "<group>"; };
+		D76C0864226C170400B04327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RippleViewController_iPad.xib; sourceTree = "<group>"; };
 		D774157B226C11A600EA9ACC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78709C71D7CD03D0046ECA1 /* RippleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleViewController.swift; sourceTree = "<group>"; };
 		D78709C91D7CD17A0046ECA1 /* RippleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleModel.swift; sourceTree = "<group>"; };
@@ -181,20 +181,20 @@
 		B66E3E2513E9E79C00D2ACF0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					B66E3E2D13E9E79C00D2ACF0 = {
-						DevelopmentTeam = D9ACCH3T4Y;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = B66E3E2813E9E79C00D2ACF0 /* Build configuration list for PBXProject "GLCameraRipple" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B66E3E2313E9E79C00D2ACF0;
 			productRefGroup = B66E3E2F13E9E79C00D2ACF0 /* Products */;
@@ -244,7 +244,7 @@
 		B66E3E4D13E9E79C00D2ACF0 /* RippleViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B66E3E4E13E9E79C00D2ACF0 /* en */,
+				D76C0863226C170400B04327 /* Base */,
 			);
 			name = RippleViewController_iPhone.xib;
 			sourceTree = "<group>";
@@ -252,7 +252,7 @@
 		B66E3E5013E9E79C00D2ACF0 /* RippleViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B66E3E5113E9E79C00D2ACF0 /* en */,
+				D76C0864226C170400B04327 /* Base */,
 			);
 			name = RippleViewController_iPad.xib;
 			sourceTree = "<group>";
@@ -264,6 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -316,6 +317,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -362,18 +364,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = D9ACCH3T4Y;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GLCameraRipple/GLCameraRipple-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "GLCameraRipple/GLCameraRipple-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oopers.GLCameraRipple;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.GLCameraRipple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -382,17 +383,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = D9ACCH3T4Y;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GLCameraRipple/GLCameraRipple-Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "GLCameraRipple/GLCameraRipple-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oopers.GLCameraRipple;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.GLCameraRipple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -347,7 +347,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
     
     //MARK: - GLKView and GLKViewController delegate methods
     
-    func update() {
+    @objc func update() {
         if let ripple = _ripple {
             ripple.runSimulation()
             
@@ -455,26 +455,27 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
     func compileShader(_ shader: UnsafeMutablePointer<GLuint>, type: GLenum, url: URL) -> Bool {
         var status: GLint = 0
         
-        guard let source = try? Data(contentsOf: url) else {
+        guard var source = try? Data(contentsOf: url) else {
             NSLog("Failed to load vertex shader")
             return false
         }
+        source.append(0)
         
         shader.pointee = glCreateShader(type)
-        source.withUnsafeBytes{(bytes: UnsafePointer<GLchar>?) in
-            var bytePtr = bytes
+        source.withUnsafeBytes{bytes in
+            var bytePtr = bytes.bindMemory(to: GLchar.self).baseAddress
             glShaderSource(shader.pointee, 1, &bytePtr, nil)
             glCompileShader(shader.pointee)
         }
         
         //#if DEBUG
-            var logLength: GLint = 0
-            glGetShaderiv(shader.pointee, GLenum(GL_INFO_LOG_LENGTH), &logLength)
-            if logLength > 0 {
-                var log: [GLchar] = Array(repeating: 0, count: Int(logLength))
-                glGetShaderInfoLog(shader.pointee, logLength, &logLength, &log)
-                NSLog("Shader compile log:\n\(String(cString: log))")
-            }
+        var logLength: GLint = 0
+        glGetShaderiv(shader.pointee, GLenum(GL_INFO_LOG_LENGTH), &logLength)
+        if logLength > 0 {
+            var log: [GLchar] = Array(repeating: 0, count: Int(logLength))
+            glGetShaderInfoLog(shader.pointee, logLength, &logLength, &log)
+            NSLog("Shader compile log:\n\(String(cString: log))")
+        }
         //#endif
         
         glGetShaderiv(shader.pointee, GLenum(GL_COMPILE_STATUS), &status)
