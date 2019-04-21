@@ -89,7 +89,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
     private var _lumaTexture: CVOpenGLESTexture?
     private var _chromaTexture: CVOpenGLESTexture?
     
-    private var _sessionPreset: String = AVCaptureSessionPreset640x480
+    private var _sessionPreset: String = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.vga640x480)
     
     private var _session: AVCaptureSession?
     private var _videoTextureCache: CVOpenGLESTextureCache?
@@ -118,10 +118,10 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
             _meshFactor = 8
             
             // Choosing bigger preset for bigger screen.
-            _sessionPreset = AVCaptureSessionPreset1280x720
+            _sessionPreset = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.hd1280x720)
         } else {
             _meshFactor = 4
-            _sessionPreset = AVCaptureSessionPreset640x480
+            _sessionPreset = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.vga640x480)
         }
         
         self.setupGL()
@@ -168,7 +168,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         CVOpenGLESTextureCacheFlush(_videoTextureCache!, 0)
     }
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+    func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             fatalError("pixelBuffer cannot be retrieved")
         }
@@ -260,10 +260,10 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         _session?.beginConfiguration()
         
         //-- Set preset session size.
-        _session?.canSetSessionPreset(_sessionPreset)
+        _session?.canSetSessionPreset(AVCaptureSession.Preset(rawValue: _sessionPreset))
         
         //-- Creata a video device and input from that Device.  Add the input to the capture session.
-        guard let videoDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else {
+        guard let videoDevice = AVCaptureDevice.default(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) else {
             fatalError()
         }
         
@@ -284,7 +284,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         //-- Set to YUV420.
         dataOutput.videoSettings = [
             kCVPixelBufferPixelFormatTypeKey as NSString: // Necessary for manual preview
-                NSNumber(value: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+                NSNumber(value: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)] as [String : Any]
         
         // Set dispatch to be on the main thread so OpenGL can do things with the data
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
@@ -508,4 +508,14 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         return true
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVCaptureSessionPreset(_ input: AVCaptureSession.Preset) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
+	return input.rawValue
 }

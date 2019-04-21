@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6198C4916C05C04000B9C73 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6198C4816C05C04000B9C73 /* Default-568h@2x.png */; };
 		B6388B2C141AB58300DA02FB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B6388B26141AB58300DA02FB /* Icon-72.png */; };
 		B6388B2D141AB58300DA02FB /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = B6388B27141AB58300DA02FB /* Icon-Small-50.png */; };
 		B6388B2E141AB58300DA02FB /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = B6388B28141AB58300DA02FB /* Icon-Small.png */; };
@@ -25,13 +24,13 @@
 		B69AAFE013FC961F00B7125C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69AAFDF13FC961F00B7125C /* AVFoundation.framework */; };
 		B69AAFE313FC965400B7125C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69AAFE213FC965400B7125C /* CoreVideo.framework */; };
 		B69AAFE513FC972A00B7125C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69AAFE413FC972A00B7125C /* CoreMedia.framework */; };
+		D774157C226C11A600EA9ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D774157B226C11A600EA9ACC /* LaunchScreen.storyboard */; };
 		D78709C81D7CD03D0046ECA1 /* RippleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78709C71D7CD03D0046ECA1 /* RippleViewController.swift */; };
 		D78709CA1D7CD17A0046ECA1 /* RippleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78709C91D7CD17A0046ECA1 /* RippleModel.swift */; };
 		D7AE5DC91D7C0D6900302CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AE5DC81D7C0D6900302CBF /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B6198C4816C05C04000B9C73 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B62EA05A140EF97B00074406 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		B6388B26141AB58300DA02FB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		B6388B27141AB58300DA02FB /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		B69AAFDF13FC961F00B7125C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B69AAFE213FC965400B7125C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		B69AAFE413FC972A00B7125C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D774157B226C11A600EA9ACC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78709C71D7CD03D0046ECA1 /* RippleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleViewController.swift; sourceTree = "<group>"; };
 		D78709C91D7CD17A0046ECA1 /* RippleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RippleModel.swift; sourceTree = "<group>"; };
 		D7AE5DC81D7C0D6900302CBF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 		B6388B25141AB58300DA02FB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B6198C4816C05C04000B9C73 /* Default-568h@2x.png */,
 				B6388B26141AB58300DA02FB /* Icon-72.png */,
 				B6388B27141AB58300DA02FB /* Icon-Small-50.png */,
 				B6388B28141AB58300DA02FB /* Icon-Small.png */,
@@ -142,6 +141,7 @@
 				B66E3E4D13E9E79C00D2ACF0 /* RippleViewController_iPhone.xib */,
 				B66E3E5013E9E79C00D2ACF0 /* RippleViewController_iPad.xib */,
 				B66E3E3C13E9E79C00D2ACF0 /* GLCameraRipple-Info.plist */,
+				D774157B226C11A600EA9ACC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,11 +181,11 @@
 		B66E3E2513E9E79C00D2ACF0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
 					B66E3E2D13E9E79C00D2ACF0 = {
 						DevelopmentTeam = D9ACCH3T4Y;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -220,8 +220,8 @@
 				B6388B2E141AB58300DA02FB /* Icon-Small.png in Resources */,
 				B6388B2F141AB58300DA02FB /* Icon-Small@2x.png in Resources */,
 				B6388B30141AB58300DA02FB /* Icon.png in Resources */,
+				D774157C226C11A600EA9ACC /* LaunchScreen.storyboard in Resources */,
 				B6388B31141AB58300DA02FB /* Icon@2x.png in Resources */,
-				B6198C4916C05C04000B9C73 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +265,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -309,12 +317,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -356,7 +372,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -374,7 +391,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopers.GLCameraRipple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
