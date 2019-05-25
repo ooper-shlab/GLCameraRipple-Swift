@@ -89,7 +89,7 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
     private var _lumaTexture: CVOpenGLESTexture?
     private var _chromaTexture: CVOpenGLESTexture?
     
-    private var _sessionPreset: String = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.vga640x480)
+    private var _sessionPreset: AVCaptureSession.Preset = .vga640x480
     
     private var _session: AVCaptureSession?
     private var _videoTextureCache: CVOpenGLESTextureCache?
@@ -118,10 +118,10 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
             _meshFactor = 8
             
             // Choosing bigger preset for bigger screen.
-            _sessionPreset = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.hd1280x720)
+            _sessionPreset = .hd1280x720
         } else {
             _meshFactor = 4
-            _sessionPreset = convertFromAVCaptureSessionPreset(AVCaptureSession.Preset.vga640x480)
+            _sessionPreset = .vga640x480
         }
         
         self.setupGL()
@@ -260,10 +260,10 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         _session?.beginConfiguration()
         
         //-- Set preset session size.
-        _session?.canSetSessionPreset(AVCaptureSession.Preset(rawValue: _sessionPreset))
+        _session?.sessionPreset = _sessionPreset
         
         //-- Creata a video device and input from that Device.  Add the input to the capture session.
-        guard let videoDevice = AVCaptureDevice.default(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) else {
+        guard let videoDevice = AVCaptureDevice.default(for: .video) else {
             fatalError()
         }
         
@@ -509,14 +509,4 @@ class RippleViewController: GLKViewController, AVCaptureVideoDataOutputSampleBuf
         return true
     }
     
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromAVCaptureSessionPreset(_ input: AVCaptureSession.Preset) -> String {
-	return input.rawValue
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
-	return input.rawValue
 }
